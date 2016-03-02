@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+<!ELEMENT schedule (days,period,courses)>
+
+<!ELEMENT days (day)>
+
+<!ELEMENT day (#PCDATA)>
+
+<!ATLIST dayofweek
+        (sunday|monday|tuesday|wednesday|thusday|friday|saturday)#REQUIRED
+        >
+
+<!ELEMENT period (timeslot)>
+
+<!-- This is not proper, just did so no errors -->
+<!ELEMENT timeslot (#PCDATA)>
+
+<!ELEMENT courses (course)>
+
+<!-- This is not proper, just did so no errors -->
+<!ELEMENT course (#PCDATA)>
