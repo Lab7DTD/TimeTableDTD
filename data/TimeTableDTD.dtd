@@ -27,20 +27,23 @@
 
 <!-- Setting courses constraints -->
 <!ELEMENT courses (session)>
-<!ELEMENT session (course,title,period,booking)>
+<!ELEMENT session (title,period)>
 <!ELEMENT title (#PCDATA)>
 
 
 
         <!-- Setting elements to be defined inside a booking -->
         <!-- Bookings are information about a course -->
-        <!ELEMENT booking (course,instructor,room)>
+        <!ELEMENT booking (course,instructor,room?)>
         <!ATTLIST booking
                 type (lecture|lab|seminar)
                 >
         <!-- Settings attributes and constraints on courses -->
         <!ELEMENT course (#PCDATA)>
         <!ELEMENT instructor (#PCDATA)>
+        <!ATTLIST instructor
+            type (lecture|lab)
+                >
         <!ELEMENT room (#PCDATA)>
         <!ATTLIST room
                 building (SW1|SW3|SW5|SW9|SE6|SE12|NE1)
