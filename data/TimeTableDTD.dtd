@@ -8,21 +8,22 @@
 <!ELEMENT days (day)>
 
 <!ELEMENT day (booking)>
-<!ASLIST day
+<!ATTLIST day
     dayofweek (monday|tuesday|wednesday|thursday|friday)
 >
 
 <!ELEMENT periods (period)>
-<!ELEMENT period (#PCDATA)>
-<!ASLIST period
+<!ELEMENT period (booking)>
+<!ATTLIST period
     timeslot (830|930|1030|1130|1230|130|230|330|430)
+        day (monday|tuesday|wednesday|thursday|friday)
 >
 
 <!ELEMENT booking (course,instructor,room)>
 <!ELEMENT course (#PCDATA)>
 <!ELEMENT instructor (#PCDATA)>
 <!ELEMENT room (#PCDATA)>
-<!ASLIST room
+<!ATTLIST room
     building (SW1|SW3|SW5|SW9|SE6|SE12|NE1)
 >
 
