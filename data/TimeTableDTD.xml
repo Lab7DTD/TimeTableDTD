@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE schedule SYSTEM 'TimeTableDTD.dtd'>
+<schedule>
+    <year>2016</year>
+    <set>4S</set>
+    <diploma>CST</diploma>
+    <days>
+        <day dayofweek="monday">
+            <booking type="lab">
+                <course>BLAW 3600</course>
+                <instructor>Catherine Ryan</instructor>
+                <room building="SW3">4785</room>
+            </booking>
+            <booking type="lecture">
+                <course>COMP 4735</course>
+                <instructor>Mirella Guttica</instructor>
+                <room building="SW1">1205</room>
+            </booking>
+            <booking type="lab">
+                <course>COMP 4735</course>
+                <instructor>Mirella Guttica</instructor>
+                <room building="SE12">320</room>
+            </booking>
+        </day>
+        <day dayofweek="tuesday">
+            <booking type="seminar">
+                <course>COMP 4977</course>
+                <instructor>D'arcy Smith</instructor>
+                <room building="SE12">325</room>
+            </booking>
+            <booking type="lecture">
+                <course>COMP 4560</course>
+                <instructor>Brenda Fine</instructor>
+                <room building="SW5">1850</room>
+            </booking>
+            <booking type="lecture">
+                <course>COMP 4711</course>
+                <instructor>Jim Perry</instructor>
+                <room building="SW5">1840</room>
+            </booking>
+            <booking type="lab">
+                <course>COMP 4560</course>
+                <instructor>Joseph</instructor>
+                <room building="SE12">322</room>
+            </booking>
+        </day>
+    </days>
+    <periods>
+        <period timeslot="930" day="monday">
+            <booking>
+                <course>BLAW 3600</course>
+                <instructor>Catherine Ryan</instructor>
+                <room building="SW3">4785</room>
+            </booking>
+        </period>
+        <period timeslot="1130" day="monday">
+            <booking>
+                <course>COMP 4735</course>
+                <instructor>Mirella Guttica</instructor>
+                <room building="SW1">1205</room>
+            </booking>
+        </period>
+        <period timeslot="1230" day="monday">
+            <booking>
+                <course>COMP 4735</course>
+                <instructor>Mirella Guttica</instructor>
+                <room building="SE12">320</room>
+            </booking>
+        </period>
+        <period timeslot="830" day="tuesday">
+            <booking>
+                <course>COMP 4977</course>
+                <instructor>D'arcy Smith</instructor>
+                <room building="SE12">325</room>
+            </booking>
+        </period>
+        <period timeslot="1130" day="tuesday">
+            <booking>
+                <course>COMP 4560</course>
+                <instructor>Brenda Fine</instructor>
+                <room building="SW5">1850</room>
+            </booking>
+        </period>
+        <period timeslot="230" day="tuesday">
+            <booking>
+                <course>COMP 4711</course>
+                <instructor>Jim Perry</instructor>
+                <room building="SW5">1840</room>
+            </booking>
+        </period>
+        <period timeslot="330" day="tuesday">
+            <booking>
+                <course>COMP 4560</course>
+                <instructor>Joseph</instructor>
+                <room building="SE12">322</room>
+            </booking>
+        </period>
+    </periods>
+    <courses>
+        <session>
+            <title>Computers and the Law</title>
+            <period>
+                <booking>
+                    <course>BLAW 3600</course>
+                    <instructor type="lecture">Catherine Ryan</instructor>
+                    <instructor type="lab">Catherine Ryan</instructor>
+                </booking>
+            </period>
+        </session>
+        <session>
+            <title>Operating Systems</title>
+            <period>
+                <booking>
+                    <course>COMP 4735</course>
+                    <instructor type="lecture">Mirella Guttica</instructor>
+                    <instructor type="lab">Mirella Guttica</instructor>
+                </booking>
+            </period>
+        </session>
+        <session>
+            <title>iOS App/Develop iPhone/iPad</title>
+            <period>
+                <booking>
+                    <course>COMP 4977</course>
+                    <instructor type="lecture">D'arcy Smith</instructor>
+                    <instructor type="lab">D'arcy Smith</instructor>
+                </booking>
+            </period>
+        </session>
+        <session>
+            <title>Computer Graphics for CST</title>
+            <period>
+                <booking>
+                    <course>COMP 4560</course>
+                    <instructor type="lecture">Brenda Fine</instructor>
+                    <instructor type="lab">Joseph</instructor>
+                </booking>
+            </period>
+        </session>
+        <session>
+            <title>Intro to Internet Software Dev</title>
+            <period>
+                <booking>
+                    <course>COMP 4711</course>
+                    <instructor type="lecture">Jim Perry</instructor>
+                    <instructor type="lab">Jim Perry</instructor>
+                </booking>
+            </period>
+        </session>
+    </courses>
+</schedule>
