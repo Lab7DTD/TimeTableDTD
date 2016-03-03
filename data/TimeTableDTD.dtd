@@ -3,8 +3,12 @@
 
 <!-- A schedule consists of the day of classes, a time of that class (period)
     , and the course that you are attending -->
-<!ELEMENT schedule (days+,periods*,courses*)>
+<!ELEMENT schedule (year,set,diploma,days+,periods*,courses*)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT set (#PCDATA)>
+<!ELEMENT diploma (#PCDATA)>
 
+<!-- Setting days constraints -->
 <!ELEMENT days (day)>
 
 <!ELEMENT day (booking)>
@@ -12,6 +16,7 @@
     dayofweek (monday|tuesday|wednesday|thursday|friday)
 >
 
+<!-- Setting periods constraints-->
 <!ELEMENT periods (period)>
 <!ELEMENT period (booking)>
 <!ATTLIST period
@@ -19,18 +24,27 @@
         day (monday|tuesday|wednesday|thursday|friday)
 >
 
-<!ELEMENT booking (course,instructor,room)>
-<!ELEMENT course (#PCDATA)>
-<!ELEMENT instructor (#PCDATA)>
-<!ELEMENT room (#PCDATA)>
-<!ATTLIST room
-    building (SW1|SW3|SW5|SW9|SE6|SE12|NE1)
->
 
-<!ELEMENT courses (course)>
+<!-- Setting courses constraints -->
+<!ELEMENT courses (session)>
+<!ELEMENT session (course,title,period,booking)>
+<!ELEMENT title (#PCDATA)>
 
 
 
+        <!-- Setting elements to be defined inside a booking -->
+        <!-- Bookings are information about a course -->
+        <!ELEMENT booking (course,instructor,room)>
+        <!ATTLIST booking
+                type (lecture|lab|seminar)
+                >
+        <!-- Settings attributes and constraints on courses -->
+        <!ELEMENT course (#PCDATA)>
+        <!ELEMENT instructor (#PCDATA)>
+        <!ELEMENT room (#PCDATA)>
+        <!ATTLIST room
+                building (SW1|SW3|SW5|SW9|SE6|SE12|NE1)
+                >
 
 
 
