@@ -2,6 +2,7 @@
 
 <!DOCTYPE schedule SYSTEM 'TimeTableDTD.dtd'>
 <schedule>
+    <year>2016</year>
     <days>
         <day>
             <booking>
