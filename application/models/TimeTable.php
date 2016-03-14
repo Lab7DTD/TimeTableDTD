@@ -56,10 +56,7 @@ class TimeTable extends CI_Model {
 
         foreach ($this->xml->courses->session as $session) {
             $record = new stdClass();
-            $record->title = (string)$session->title;
-            $record->period = (string)$session->period;
-            $record->timeslot = (string) $period['timeslot'];
-            $record->day = (string) $period['day'];
+            $record->title = (string) $session->title;
             $record->bookings = array();
 
             foreach($session->booking as $booking) {
@@ -90,24 +87,74 @@ class TimeTable extends CI_Model {
 
     function getDaysOfWeek() {
         return array
-        (   "Monday"    => "Monday",
-            "Tuesday"   => "Tuesday",
-            "Wednesday" => "Wednesday",
-            "Thursday"  => "Thursday",
-            "Friday"    => "Friday");
+        (   "monday"    => "Monday",
+            "tuesday"   => "Tuesday",
+            "wednesday" => "Wednesday",
+            "thursday"  => "Thursday",
+            "friday"    => "Friday");
     }
     function getTimeslots() {
         return array
-        (   "8:30"   => "8:30",
-            "9:30"   => "9:30",
-            "10:30"  => "10:30",
-            "11:30"  => "11:30",
-            "12:30"  => "12:30",
-            "1:30"   => "1:30",
-            "2:30"   => "2:30",
-            "3:30"   => "3:30",
-            "4:30"   => "4:30");
+        (   "830"   => "8:30",
+            "930"   => "9:30",
+            "1030"  => "10:30",
+            "1130"  => "11:30",
+            "1230"  => "12:30",
+            "130"   => "1:30",
+            "230"   => "2:30",
+            "330"   => "3:30",
+            "430"   => "4:30");
     }
+
+    function getBookingsInDays($day, $timeslot) {
+
+        $records = array();
+        foreach($this->days as $findDay) {
+            if($findDay->dayofweek == $day) {
+                foreach($findDay->bookings as $dayBooked) {
+                    if($dayBooked->timeslot == $timeslot) {
+                        array_push($records,$dayBooked);
+                    }
+                }
+            }
+        }
+
+        return $records;
+
+    }
+
+    function getBookingsInPeriods($day, $timeslot) {
+
+        $records = array();
+        foreach($this->periods as $findPeriod) {
+            if($findPeriod->timeslot == $timeslot) {
+                foreach($findPeriod->booking as $periodBooked) {
+                    if($periodBooked->day == $day) {
+                        array_push($records,$periodBooked);
+                    }
+                }
+            }
+        }
+
+        return $records;
+
+    }
+
+    function getBookingsInCourses($day, $timeslot) {
+
+        $records = array();
+        foreach($this->courses as $findCourse) {
+            foreach($findCourse->bookings as $courseBooked) {
+                if($courseBooked->day == $day && $courseBooked->timeslot == $timeslot) {
+                    array_push($records, $courseBooked);
+                }
+            }
+        }
+
+        return $records;
+
+    }
+
 }
 
 // Booking class contructor goes here

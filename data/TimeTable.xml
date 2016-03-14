@@ -82,68 +82,52 @@
     <courses>
         <session>
             <title>Computers and the Law</title>
-            <period timeslot="930" day="monday">
-                <booking>
+                <booking timeslot="930" day="monday" type="lab">
                     <course cname="BLAW3600"/>
-                    <instructor type="lab">Catherine Ryan</instructor>
+                    <instructor>Catherine Ryan</instructor>
                     <room building="SW3" roomNum="4785"/>
                 </booking>
-            </period>
-            <period timeslot="830" day="friday">
-                <booking>
+                <booking timeslot="830" day="friday" type="lecture">
                     <course cname="BLAW3600"/>
-                    <instructor type="lecture">Catherine Ryan</instructor>
+                    <instructor>Catherine Ryan</instructor>
                     <room building="SW5" roomNum="1840"/>
                 </booking>
-            </period>
         </session>
         <session>
             <title>Operating Systems</title>
-            <period day="monday" timeslot="1130">
-                <booking>
+                <booking day="monday" timeslot="1130" type="lecture">
                     <course cname="COMP4735"/>
-                    <instructor type="lecture">Mirella Guttica</instructor>
+                    <instructor>Mirella Guttica</instructor>
                     <room building="SW1" roomNum="1205"/>
                 </booking>
-            </period>
-            <period day="monday" timeslot="1230">
-                <booking>
+                <booking day="monday" timeslot="1230" type="lab">
                     <course cname="COMP4735"/>
-                    <instructor type="lab">Mirella Guttica</instructor>
+                    <instructor>Mirella Guttica</instructor>
                     <room building="SE12" roomNum="320"/>
                 </booking>
-            </period>
-            <period day="wednesday" timeslot="130">
-                <booking>
+                <booking day="wednesday" timeslot="130" type="lecture">
                     <course cname="COMP4735"/>
-                    <instructor type="lecture">Mirella Guttica</instructor>
+                    <instructor>Mirella Guttica</instructor>
                     <room building="SW1" roomNum="1205"/>
                 </booking>
-            </period>
-            <period day="thursday" timeslot="1130">
-                <booking>
+                <booking day="thursday" timeslot="1130" type="lecture">
                     <course cname="COMP4735"/>
-                    <instructor type="lecture">Mirella Guttica</instructor>
+                    <instructor>Mirella Guttica</instructor>
                     <room building="SW3" roomNum="1710"/>
                 </booking>
-            </period>
         </session>
         <session>
             <title>Intro to Internet Software Dev</title>
-            <period day="tuesday" timeslot="230">
-                <booking>
+                <booking day="tuesday" timeslot="230" type="lecture">
                     <course cname="COMP4711"/>
-                    <instructor type="lecture">Jim Perry</instructor>
+                    <instructor>Jim Perry</instructor>
                     <room building="SW5" roomNum="1840"/>
                 </booking>
-            </period>
-            <period day="wednesday" timeslot="930">
-                <booking>
+                <booking day="wednesday" timeslot="930" type="lab">
                     <course cname="COMP4711"/>
-                    <instructor type="lab">Jim Perry</instructor>
+                    <instructor>Jim Perry</instructor>
                     <room building="SE12" roomNum="320"/>
                 </booking>
-            </period>
         </session>
     </courses>
 </schedule>
