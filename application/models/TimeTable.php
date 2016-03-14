@@ -10,11 +10,8 @@ class TimeTable extends CI_Model {
 
     // xml file var
     protected $xml = null;
-
     // Days facet
     protected $days = array();
-    //Days of the week dropdown list
-    protected $daysofweek = array();
     // Period sections facet
     protected $periods = array();
     // Specific course facet
@@ -29,15 +26,32 @@ class TimeTable extends CI_Model {
         foreach ($this->xml->days->day as $day) {
             $record = stdClass();
             $record->dayofweek = (string) $day['dayofweek'];
-            $this->days[$record->day] = $record;
+            $record->bookings = array();
 
-            // Will need to add booking object after class contructor is created
+
+            foreach($day->booking as $booking) {
+
+                array_push($record->bookings, new Booking($booking));
+
+            }
+
+            array_push($this->days, $record);
+
         }
 
         foreach ($this->xml->periods->period as $period) {
             $record = stdclass();
             $record->timeslot = (string) $period['timeslot'];
-            $this->periods[$record->period] = $record;
+            $record->bookings = array();
+
+            foreach($period->booking as $booking) {
+
+                array_push($record->bookings, new Booking(($booking)));
+
+            }
+
+            array_push($this->periods, $record);
+
         }
 
         foreach ($this->xml->courses->session as $session) {
@@ -46,10 +60,58 @@ class TimeTable extends CI_Model {
             $record->period = $session->period;
             $record->timeslot = (string) $period['timeslot'];
             $record->day = (string) $period['day'];
-            $this->courses[$record->session] = $record;
+            $record->bookings = array();
+
+            foreach($session->booking as $booking) {
+
+                array_push($record->bookings, new Booking($booking));
+
+            }
+
+            array_push($this->courses, $record);
+
         }
     }
 
+    public function getDays()
+    {
+        return $this->days;
+    }
+
+    public function getCourses()
+    {
+        return $this->courses;
+    }
+
+    public function getPeriods()
+    {
+        return $this->periods;
+    }
 }
 
 // Booking class contructor goes here
+class Booking extends CI_Model {
+
+    public $day = null;
+    public $type = null;
+    public $timeslot = null;
+    public $cname = null;
+    public $instructor = '';
+    public $building = null;
+    public $roomNum = '';
+
+
+    public function __construct($booking)
+    {
+        parent::construct();
+
+        $this->day = (isset($booking['day'])) ? (string) $booking['day'] : null;
+        $this->type = (isset($booking['type'])) ? (string) $booking['type'] : null;
+        $this->timeslot = (isset($booking['timeslot']))? (string) $booking['timeslot'] : null;
+        $this->cname = (isset($booking->course['cname'])) ? (string) $booking->course['cname'] : null;
+        $this->instructor = (string) $booking->instructor;
+        $this->building = (isset($booking->room['building'])) ? (string) $booking->room['building'] : null;
+        $this->roomNum = (string) $booking->room['roomNum'];
+
+    }
+}

@@ -10,10 +10,9 @@
 <!-- Setting days constraints -->
 <!ELEMENT days (day+)>
 
-<!ELEMENT day (booking*)>
-<!ATTLIST day
-    dayofweek (monday|tuesday|wednesday|thursday|friday) #REQUIRED
-        >
+<!ELEMENT day (dayofweek,booking*)>
+<!ELEMENT dayofweek (#PCDATA)>
+
 
 <!-- Setting periods constraints-->
 <!ELEMENT periods (period*)>
@@ -42,7 +41,7 @@
         <!-- Settings attributes and constraints on courses -->
         <!ELEMENT course (#PCDATA)>
         <!ATTLIST course
-                ctype (BLAW3600|COMP4735|COMP4977|COMP4560|COMP4711|COMP4976) #IMPLIED
+                cname (BLAW3600|COMP4735|COMP4977|COMP4560|COMP4711|COMP4976) #IMPLIED
                 >
         <!ELEMENT instructor (#PCDATA)>
         <!ATTLIST instructor
