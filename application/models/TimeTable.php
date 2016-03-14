@@ -87,6 +87,27 @@ class TimeTable extends CI_Model {
     {
         return $this->periods;
     }
+
+    function getDaysOfWeek() {
+        return array
+        (   "Monday"    => "Monday",
+            "Tuesday"   => "Tuesday",
+            "Wednesday" => "Wednesday",
+            "Thursday"  => "Thursday",
+            "Friday"    => "Friday");
+    }
+    function getTimeslots() {
+        return array
+        (   "8:30"   => "8:30",
+            "9:30"   => "9:30",
+            "10:30"  => "10:30",
+            "11:30"  => "11:30",
+            "12:30"  => "12:30",
+            "1:30"   => "1:30",
+            "2:30"   => "2:30",
+            "3:30"   => "3:30",
+            "4:30"   => "4:30");
+    }
 }
 
 // Booking class contructor goes here
