@@ -20,12 +20,12 @@ class TimeTable extends CI_Model {
 
     public function __construct()
     {
-        parent::construct();
+        parent::__construct();
         $this->xml = simplexml_load_file(DATAPATH."TimeTable.xml");
 
         foreach ($this->xml->days->day as $day) {
-            $record = stdClass();
-            $record->dayofweek = (string) $day['dayofweek'];
+            $record = new stdClass();
+            $record->dayofweek = (string) $day -> dayofweek;
             $record->bookings = array();
 
 
@@ -40,7 +40,7 @@ class TimeTable extends CI_Model {
         }
 
         foreach ($this->xml->periods->period as $period) {
-            $record = stdclass();
+            $record = new stdclass();
             $record->timeslot = (string) $period['timeslot'];
             $record->bookings = array();
 
@@ -55,9 +55,9 @@ class TimeTable extends CI_Model {
         }
 
         foreach ($this->xml->courses->session as $session) {
-            $record = stdClass();
-            $record->title = $session->title;
-            $record->period = $session->period;
+            $record = new stdClass();
+            $record->title = (string)$session->title;
+            $record->period = (string)$session->period;
             $record->timeslot = (string) $period['timeslot'];
             $record->day = (string) $period['day'];
             $record->bookings = array();
@@ -124,7 +124,7 @@ class Booking extends CI_Model {
 
     public function __construct($booking)
     {
-        parent::construct();
+        parent::__construct();
 
         $this->day = (isset($booking['day'])) ? (string) $booking['day'] : null;
         $this->type = (isset($booking['type'])) ? (string) $booking['type'] : null;

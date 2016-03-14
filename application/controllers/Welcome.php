@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends Application {
 
 	/**
 	 * Index Page for this controller.
@@ -20,6 +20,13 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		//$this->load->view('welcome_message');
+		$this->data['pagebody']   = 'home';
+		$this->data['days'] = $this->TimeTable->getDays();
+		$this->data['periods'] = $this->TimeTable->getPeriods();
+		$this->data['courses'] = $this->TimeTable->getCourses();
+		$this->data['day_dropdown'] = form_dropdown('day', $this->TimeTable->getDaysOfWeek());
+		$this->data['time_dropdown'] = form_dropdown('time', $this->TimeTable->getTimeslots());
+		$this->render();
 	}
 }

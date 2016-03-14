@@ -50,29 +50,29 @@
     </days>
     <periods>
         <period timeslot="930">
-            <booking day="monday">
+            <booking day="monday" type="lab">
                 <course cname="BLAW3600"/>
                 <instructor type="lab">Catherine Ryan</instructor>
                 <room building="SW3" roomNum="4785"/>
             </booking>
-            <booking day="wednesday">
+            <booking day="wednesday" type="lab">
                 <course cname="COMP4711"/>
                 <instructor type="lab">Jim Parry</instructor>
                 <room building="SE12" roomNum="320"/>
             </booking>
         </period>
         <period timeslot="1130">
-            <booking day="monday">
+            <booking day="monday" type="lecture">
                 <course cname="COMP4735"/>
                 <instructor>Mirella Guttica</instructor>
                 <room building="SW1" roomNum="1205"/>
             </booking>
-            <booking day="tuesday">
+            <booking day="tuesday" type="lecture">
                 <course cname="COMP4560"/>
                 <instructor type="lecture">Brenda Fine</instructor>
                 <room building="SW5" roomNum="1850"/>
             </booking>
-            <booking day="thursday">
+            <booking day="thursday" type="lecture">
                 <course cname="COMP4735"/>
                 <instructor type="lecture">Mirela Gutica</instructor>
                 <room building="SW3" roomNum="1710"/>
