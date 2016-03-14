@@ -25,7 +25,11 @@
 
 <!-- Setting courses constraints -->
 <!ELEMENT courses (session*)>
-<!ELEMENT session (title,period*)>
+<!ELEMENT session (title,booking+)>
+<!ATTLIST session
+        timeslot (830|930|1030|1130|1230|130|230|330|430) #IMPLIED
+        day (monday|tuesday|wednesday|thursday|friday) #IMPLIED
+        >
 <!ELEMENT title (#PCDATA)>
 
 
