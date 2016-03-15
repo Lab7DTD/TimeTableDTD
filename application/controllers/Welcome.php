@@ -29,4 +29,9 @@ class Welcome extends Application {
 		$this->data['time_dropdown'] = form_dropdown('time', $this->TimeTable->getTimeslots());
 		$this->render();
 	}
+
+	public function search() {
+		// don't know how to do this...
+		$this->index();
+	}
 }
