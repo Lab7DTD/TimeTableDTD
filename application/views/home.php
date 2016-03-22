@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-6">
-        <h3>Days</h3>
+        <h2 style="text-decoration: underline">Days</h2>
         {days}
             <!-- Default panel contents -->
-            <div class="panel-heading">{dayofweek}</div>
+            <h3><div class="panel-heading">{dayofweek}</div></h3>
 
             <table class="table">
                 <tr>
@@ -28,10 +28,10 @@
         {/days}
     </div>
     <div class="col-md-6">
-        <h3>Periods</h3>
+        <h2 style="text-decoration: underline">Periods</h2>
         {periods}
             <!-- Default panel contents -->
-            <div class="panel-heading">{timeslot}</div>
+            <h3><div class="panel-heading">{timeslot}</div></h3>
 
             <table class="table">
                 <tr>
@@ -56,11 +56,11 @@
         {/periods}
     </div>
     <div class="col-md-6">
-        <h3>Courses</h3>
+        <h2 style="text-decoration: underline">Courses</h2>
         {courses}
         <div class="panel panel-primary">
             <!-- Default panel contents -->
-            <div class="panel-heading">{title}</div>
+            <h3><div class="panel-heading">{title}</div></h3>
 
             <table class="table">
                 <tr>
@@ -90,14 +90,14 @@
         <form action="/welcome/search" method="post" accept-charset="utf-8">
             <h4>Day: {day_dropdown}</h4>
             <h4>Time: {time_dropdown}</h4>
-            <input type="submit" name="submit" value="Search" />
+            <input type="submit" name="submit" value="Not Working" />
         </form>
     </div>
-    <div class="col-md-6">
-        <h3>{error}</h3>
-    </div>
-    <div class="col-md-6">
-        <h3>{bingo}</h3>
-        <p>{results}</p>
-    </div>
+<!--    <div class="col-md-6">-->
+<!--        <h3>{error}</h3>-->
+<!--    </div>-->
+<!--    <div class="col-md-6">-->
+<!--        <h3>{bingo}</h3>-->
+<!--        <p>{results}</p>-->
+<!--    </div>-->
 </div>
