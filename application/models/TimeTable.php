@@ -128,7 +128,7 @@ class TimeTable extends CI_Model {
         $records = array();
         foreach($this->periods as $findPeriod) {
             if($findPeriod->timeslot == $timeslot) {
-                foreach($findPeriod->booking as $periodBooked) {
+                foreach($findPeriod->bookings as $periodBooked) {
                     if($periodBooked->day == $day) {
                         array_push($records,$periodBooked);
                     }

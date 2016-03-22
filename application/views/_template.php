@@ -27,7 +27,7 @@ if (!defined('APPPATH'))
         </div>
     </div>
     <div id="content">
-        <h1>{title}</h1>
+        <h1 style="text-align: center">{title}</h1>
         {content}
     </div>
     <br/>
