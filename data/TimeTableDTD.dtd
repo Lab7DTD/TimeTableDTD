@@ -10,10 +10,9 @@
 <!-- Setting days constraints -->
 <!ELEMENT days (day+)>
 
-<!ELEMENT day (booking*)>
-<!ATTLIST day
-    dayofweek (monday|tuesday|wednesday|thursday|friday) #REQUIRED
-        >
+<!ELEMENT day (dayofweek,booking*)>
+<!ELEMENT dayofweek (#PCDATA)>
+
 
 <!-- Setting periods constraints-->
 <!ELEMENT periods (period*)>
@@ -26,7 +25,11 @@
 
 <!-- Setting courses constraints -->
 <!ELEMENT courses (session*)>
-<!ELEMENT session (title,period*)>
+<!ELEMENT session (title,booking+)>
+<!ATTLIST session
+        timeslot (830|930|1030|1130|1230|130|230|330|430) #IMPLIED
+        day (monday|tuesday|wednesday|thursday|friday) #IMPLIED
+        >
 <!ELEMENT title (#PCDATA)>
 
 
@@ -36,9 +39,14 @@
         <!ELEMENT booking (course,instructor+,room?)>
         <!ATTLIST booking
                 type (lecture|lab|seminar) #IMPLIED
+                day (monday|tuesday|wednesday|thursday|friday) #IMPLIED
+                timeslot (830|930|1030|1130|1230|130|230|330|430) #IMPLIED
                 >
         <!-- Settings attributes and constraints on courses -->
         <!ELEMENT course (#PCDATA)>
+        <!ATTLIST course
+                cname (BLAW3600|COMP4735|COMP4977|COMP4560|COMP4711|COMP4976) #IMPLIED
+                >
         <!ELEMENT instructor (#PCDATA)>
         <!ATTLIST instructor
             type (lecture|lab) #IMPLIED
@@ -46,6 +54,7 @@
         <!ELEMENT room (#PCDATA)>
         <!ATTLIST room
                 building (SW1|SW3|SW5|SW9|SE6|SE12|NE1) #REQUIRED
+                roomNum (4785|1205|320|325|1850|1840|322|308|1710|1750) #REQUIRED
                 >
 
 

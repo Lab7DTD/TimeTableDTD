@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE schedule SYSTEM 'TimeTableDTD.dtd'>
+<schedule>
+    <year>2016</year>
+    <set>4S</set>
+    <diploma>CST</diploma>
+    <days>
+        <day>
+            <dayofweek>Monday</dayofweek>
+            <booking type="lab" timeslot="930">
+                <course cname="BLAW3600"/>
+                <instructor>Catherine Ryan</instructor>
+                <room building="SW3" roomNum="4785"/>
+            </booking>
+            <booking type="lecture" timeslot="1130">
+                <course cname="COMP4735"/>
+                <instructor>Mirella Guttica</instructor>
+                <room building="SW1" roomNum="1205"/>
+            </booking>
+            <booking type="lab" timeslot="1230">
+                <course cname="COMP4735"/>
+                <instructor>Mirella Guttica</instructor>
+                <room building="SE12" roomNum="320"/>
+            </booking>
+        </day>
+        <day>
+            <dayofweek>Tuesday</dayofweek>
+            <booking type="seminar" timeslot="830">
+                <course cname="COMP4977"/>
+                <instructor>D'arcy Smith</instructor>
+                <room building="SE12" roomNum="325"/>
+            </booking>
+            <booking type="lecture" timeslot="1130">
+                <course cname="COMP4560"/>
+                <instructor>Brenda Fine</instructor>
+                <room building="SW5" roomNum="1850"/>
+            </booking>
+            <booking type="lecture" timeslot="230">
+                <course cname="COMP4711"/>
+                <instructor>Jim Perry</instructor>
+                <room building="SW5" roomNum="1840"/>
+            </booking>
+            <booking type="lab" timeslot="330">
+                <course cname="COMP4560"/>
+                <instructor>Joseph</instructor>
+                <room building="SE12" roomNum="322"/>
+            </booking>
+        </day>
+    </days>
+    <periods>
+        <period timeslot="930">
+            <booking day="monday" type="lab">
+                <course cname="BLAW3600"/>
+                <instructor type="lab">Catherine Ryan</instructor>
+                <room building="SW3" roomNum="4785"/>
+            </booking>
+            <booking day="wednesday" type="lab">
+                <course cname="COMP4711"/>
+                <instructor type="lab">Jim Parry</instructor>
+                <room building="SE12" roomNum="320"/>
+            </booking>
+        </period>
+        <period timeslot="1130">
+            <booking day="monday" type="lecture">
+                <course cname="COMP4735"/>
+                <instructor>Mirella Guttica</instructor>
+                <room building="SW1" roomNum="1205"/>
+            </booking>
+            <booking day="tuesday" type="lecture">
+                <course cname="COMP4560"/>
+                <instructor type="lecture">Brenda Fine</instructor>
+                <room building="SW5" roomNum="1850"/>
+            </booking>
+            <booking day="thursday" type="lecture">
+                <course cname="COMP4735"/>
+                <instructor type="lecture">Mirela Gutica</instructor>
+                <room building="SW3" roomNum="1710"/>
+            </booking>
+        </period>
+    </periods>
+    <courses>
+        <session>
+            <title>Computers and the Law</title>
+                <booking timeslot="930" day="monday" type="lab">
+                    <course cname="BLAW3600"/>
+                    <instructor>Catherine Ryan</instructor>
+                    <room building="SW3" roomNum="4785"/>
+                </booking>
+                <booking timeslot="830" day="friday" type="lecture">
+                    <course cname="BLAW3600"/>
+                    <instructor>Catherine Ryan</instructor>
+                    <room building="SW5" roomNum="1840"/>
+                </booking>
+        </session>
+        <session>
+            <title>Operating Systems</title>
+                <booking day="monday" timeslot="1130" type="lecture">
+                    <course cname="COMP4735"/>
+                    <instructor>Mirella Guttica</instructor>
+                    <room building="SW1" roomNum="1205"/>
+                </booking>
+                <booking day="monday" timeslot="1230" type="lab">
+                    <course cname="COMP4735"/>
+                    <instructor>Mirella Guttica</instructor>
+                    <room building="SE12" roomNum="320"/>
+                </booking>
+                <booking day="wednesday" timeslot="130" type="lecture">
+                    <course cname="COMP4735"/>
+                    <instructor>Mirella Guttica</instructor>
+                    <room building="SW1" roomNum="1205"/>
+                </booking>
+                <booking day="thursday" timeslot="1130" type="lecture">
+                    <course cname="COMP4735"/>
+                    <instructor>Mirella Guttica</instructor>
+                    <room building="SW3" roomNum="1710"/>
+                </booking>
+        </session>
+        <session>
+            <title>Intro to Internet Software Dev</title>
+                <booking day="tuesday" timeslot="230" type="lecture">
+                    <course cname="COMP4711"/>
+                    <instructor>Jim Perry</instructor>
+                    <room building="SW5" roomNum="1840"/>
+                </booking>
+                <booking day="wednesday" timeslot="930" type="lab">
+                    <course cname="COMP4711"/>
+                    <instructor>Jim Perry</instructor>
+                    <room building="SE12" roomNum="320"/>
+                </booking>
+        </session>
+    </courses>
+</schedule>
